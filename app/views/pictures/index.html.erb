@@ -9,9 +9,9 @@
       <div class="your-name">
         <% if @username %>
             <%= link_to '新規投稿', new_picture_path, :class => 'btn btn-primary' %>
-            You are @<%= @username %>
+            こんにちは @<%= @username %> さん
         <% else %>
-            Not login yet.
+            ログインしていません
         <% end %>
       </div>
     </div><br>
@@ -28,13 +28,14 @@
             <div class="col-sm-12 picture-comment"><br><%= picture.comment %><br><br></div>
             <% if picture.user == current_user %>
               <div class="col-sm-6 col-md-4 col-lg-3">
-                <%= link_to 'edit', edit_picture_path(picture.id), :class => 'btn btn-default'%>
-                <%= link_to 'delete', picture_path(picture.id), data: {confirm: 'delete this picture?' } , method: :delete, :class => 'btn btn-danger'%>
+                <%= link_to '編集', edit_picture_path(picture.id), :class => 'btn btn-default'%>
+                <%= link_to '削除', picture_path(picture.id), data: {confirm: 'delete this picture?' } , method: :delete, :class => 'btn btn-danger'%>
               </div>
             <% end %>
             <% if picture.user %>
               <div class="col-sm-6 col-md-4 col-lg-6 picture-name">
-                posted @<%= picture.user.name %> <%= picture.created_at.strftime("%Y-%-m-%d_%H:%M:%S") %>
+                @<%= picture.user.name %>さんの投稿
+                <br><%= picture.created_at.strftime("%Y年%-m月%d日_%H:%M:%S") %>
               </div>
             <% end %>
             </div>

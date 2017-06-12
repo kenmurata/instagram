@@ -13,8 +13,8 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "TOP", root_path %></li>
-            <li><%= link_to "新規投稿", new_picture_path %></li>
             <% if user_signed_in? %>
+              <li><%= link_to "新規投稿", new_picture_path %></li>
               <li><%= link_to "マイページ", edit_user_registration_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
@@ -28,6 +28,8 @@
   </header>
 
 <%= yield %>
-
+  <footer>
+    <p>My Instagram 2017 Copyright K.M</p>
+  </footer>
 </body>
 </html>
