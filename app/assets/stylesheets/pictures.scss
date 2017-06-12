@@ -1,3 +1,42 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.img-rounded {
+    width: auto;
+    max-height: 300px;
+}
+
+.picture-title {
+    font-weight: 700;
+    font-size: 50px;
+    vertical-align: center;
+    font-family: "MeiryoUI";
+}
+
+.picture-area {
+}
+
+.your-name {
+    margin-left: 15px;
+    text-align: left;
+    font-size: 20px;
+    color: #666666;
+}
+
+.picture-comment {
+    font-family: "メイリオ";
+    font-size: 20px;
+    color: #000000;
+    vertical-align: center;
+}
+
+.picture-name {
+    font-family: "メイリオ";
+    font-size: 20px;
+    color: #666666;
+    vertical-align: bottom;
+}
+
+.top-logo {
+    text-align: center;
+}

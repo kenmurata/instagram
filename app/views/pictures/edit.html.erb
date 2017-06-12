@@ -1,0 +1,13 @@
+<h1>edit picture</h1>
+<%= form_for(@picture, url: picture_path, method: :patch) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+  <br>
+  <%= image_tag @picture.image_url %>
+  <br>
+  <%= f.submit '投稿', :class => "btn btn-primary" %>
+  <%= link_to '戻る',:back, :class => 'btn btn-default' %>
+<% end %>
