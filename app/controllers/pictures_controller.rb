@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
     def update
         @picture = Picture.find(params[:id])
         if @picture.update(picture_params)
-            redirect_to pictures_path, notice: '投稿しました'
+            redirect_to pictures_path, notice: '編集しました'
         else
             render 'edit'
         end
@@ -31,7 +31,7 @@ class PicturesController < ApplicationController
     def destroy
         @picture = Picture.find(params[:id])
         @picture.destroy
-        redirect_to pictures_path, notice: 'delete picture success'
+        redirect_to pictures_path, notice: '削除しました'
     end
     private
       def picture_params

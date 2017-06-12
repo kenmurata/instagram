@@ -1,13 +1,29 @@
-<h1>edit picture</h1>
+<div class="container"><div class="row"><div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+<h1>投稿の編集</h1>
+
 <%= form_for(@picture, url: picture_path, method: :patch) do |f| %>
+  <!-- エラーがあった場合の表示 -->
+  <% if @picture.errors.any? %>
+    <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class:"form-control", placeholder: 'title' %>
   <br>
   <%= f.label :comment %>
-  <%= f.text_field :comment %>
+  <%= f.text_field :comment, class:"form-control", placeholder: "comment" %>
   <br>
   <%= image_tag @picture.image_url %>
+  <br>
+  <%= f.label :image_url %>
+  <%= f.file_field :image_url %>
   <br>
   <%= f.submit '投稿', :class => "btn btn-primary" %>
   <%= link_to '戻る',:back, :class => 'btn btn-default' %>
 <% end %>
+</div></div></div>

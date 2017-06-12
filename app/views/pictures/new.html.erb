@@ -1,4 +1,5 @@
-<h1>new picture</h1>
+<div class="container"><div class="row"><div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+<h1>新規投稿</h1>
 <%= form_for(@picture, url: pictures_path, method: :post) do |f| %>
   <!-- エラーがあった場合の表示 -->
   <% if @picture.errors.any? %>
@@ -11,15 +12,16 @@
   <% end %>
   
   <!-- 入力フォーム -->
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.label :"タイトル" %>
+  <%= f.text_field :title, class:"form-control", placeholder: 'title' %>
   <br>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
+  <%= f.label :"コメント" %>
+  <%= f.text_field :comment, class:"form-control", placeholder: 'comment'  %>
   <br>
-  <%= f.label :image_url %>
+  <%= f.label :"写真を選択" %>
   <%= f.file_field :image_url %>
   <br>
   <%= f.submit '投稿', :class => "btn btn-primary" %>
   <%= link_to '戻る',:back, :class => 'btn btn-default' %>
 <% end %>
+</div></div></div>
