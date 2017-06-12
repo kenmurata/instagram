@@ -7,6 +7,8 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'cc1efe829f59cf47fdcf5df24536ba263818311d9f046cd4bafde0f2145594f70a5d2271c40e70890338c503583a05bcc4fad98a43c97b911ae8f1a7e9aa890b'
+  config.secret_key = '119b376ef2611f77cbd7608511fee31fd718fe254928ddbfc30f6c15ed24348c747106a894fd3b0db08c069b918fcf6fb04d6f893c36e0fd046f702c4900bcfb'
+
   if Rails.env.production?
     config.omniauth :facebook, ENV["FACEBOOK_ID_PRODUCTION"], ENV["FACEBOOK_SECRET_PRODUCTION"], scope: 'email', display: 'popup', info_fields: 'name, email'
     config.omniauth :twitter, ENV["TWITTER_ID_PRODUCTION"], ENV["TWITTER_SECRET_PRODUCTION"], scope: 'email', display: 'popup', info_fields: 'name, email'
